@@ -1,0 +1,42 @@
+API - ClientsController
+A API foi desenvolvida pensando no crescimento da aplicação, permitindo que John Doe expanda seu site conforme necessário.
+
+Endpoints Disponíveis
+1. Obter todos os clientes
+Método: GET
+URL: /clients/GetAllClients
+Descrição: Retorna a lista de todos os clientes cadastrados.
+
+2. Criar ou atualizar um cliente
+Método: POST
+URL: /clients/CreateOrUpdateClient
+Descrição: Executa uma stored procedure que cria um novo cliente ou atualiza um existente com base no ID.
+Request Body: ClientDTO
+Respostas:
+200 OK - Cliente salvo com sucesso.
+400 BAD REQUEST - CPF ou e-mail já cadastrados.
+500 INTERNAL SERVER ERROR - Erro inesperado.
+
+3. Buscar cliente por ID
+Método: GET
+URL: /clients/GetClientById/{id}
+Descrição: Retorna os dados de um cliente específico.
+Parâmetros:
+{id} (Path Variable) - ID do cliente a ser buscado.
+
+4. Desativar um cliente
+Método: PUT
+URL: /clients/deactivate/{id}
+Descrição: Desativa um cliente com base no ID.
+Parâmetros:
+{id} (Path Variable) - ID do cliente a ser desativado.
+Respostas:
+200 OK - Cliente desativado com sucesso.
+
+5. Obter todas as cores disponíveis
+Método: GET
+URL: /clients/colors
+Descrição: Retorna a lista de cores cadastradas no sistema.
+6. Tratamento de erros
+400 BAD REQUEST - Erros de entrada inválida.
+500 INTERNAL SERVER ERROR - Erro interno do sistema.
