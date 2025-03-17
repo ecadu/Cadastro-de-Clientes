@@ -28,7 +28,7 @@ export default function ClientForm() {
             setColors(JSON.parse(cachedColors));
             return;
         }
-        api.get("http://localhost:8080/clients/colors")
+        api.get("/clients/colors")
             .then((response) => {
                 setColors(response.data);
                 localStorage.setItem("colors", JSON.stringify(response.data));
